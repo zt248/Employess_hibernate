@@ -1,4 +1,4 @@
-import dao.HibernateUtil;
+import Util.HibernateUtil;
 import entity.Address;
 import entity.Department;
 import entity.Employee;

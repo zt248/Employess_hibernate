@@ -88,7 +88,7 @@ public class Employee implements java.io.Serializable{
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "EmployeeDao{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
