@@ -5,6 +5,8 @@
     <artifactId>employess</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
     <name>employess Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
@@ -33,11 +35,42 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.2.11.Final</version>
+            <version>5.2.12.Final</version>
         </dependency>
+
+        <!--Нужно для jdk9-->
+
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>javax.xml.bind</groupId>-->
+            <!--<artifactId>jaxb-api</artifactId>-->
+            <!--<version>2.3.0</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+            <!--<groupId>com.sun.xml.bind</groupId>-->
+            <!--<artifactId>jaxb-impl</artifactId>-->
+            <!--<version>2.2.11</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.sun.xml.bind</groupId>-->
+            <!--<artifactId>jaxb-core</artifactId>-->
+            <!--<version>2.2.11</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.sun.activation</groupId>-->
+            <!--<artifactId>javax.activation</artifactId>-->
+            <!--<version>1.2.0</version>-->
+        <!--</dependency>-->
+
+
 
     </dependencies>
     <build>
         <finalName>employess</finalName>
+
     </build>
 </project>
