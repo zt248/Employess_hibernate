@@ -1,4 +1,7 @@
-import Util.HibernateUtil;
+import dao.DaoException;
+import dao.impl.AddressDaoImpl;
+import dao.impl.DepartmentDaoImpl;
+import util.HibernateUtil;
 import entity.Address;
 import entity.Department;
 import entity.Employee;
@@ -12,13 +15,16 @@ import java.util.Set;
 public class Domain {
 
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws DaoException {
 
 
+//        Session session = HibernateUtil.getSessionFactory().openSession();
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
+//        session.beginTransaction();
 
-        session.beginTransaction();
+        AddressDaoImpl addressDaoImpl = new AddressDaoImpl();
+        DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
+
 
         Address address = new Address();
         address.setCountry("Belarus");
@@ -35,7 +41,7 @@ public class Domain {
 
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(1939,Calendar.MAY,1);
+        calendar.set(1939, Calendar.MAY, 1);
 
         employee.setBirthday(new Date(calendar.getTime().getTime()));
         employee.setAddress(address);
@@ -49,12 +55,16 @@ public class Domain {
         departments.add(department);
         employee.setDepartments(departments);
 
-        session.save(address);
-        session.save(department);
-        session.save(employee);
+        addressDaoImpl.add(address);
+        departmentDaoImpl.add(department);
 
-        session.getTransaction().commit();
+//        session.save(address);
+//        session.save(department);
+//        session.save(employee);
+
+//        session.getTransaction().commit();
+//        HibernateUtil.shutdown();
+
         HibernateUtil.shutdown();
-
     }
 }
